@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <router-view/>
+    <router-view />
   </div>
 </template>
+
 
 <script>
 export default {
@@ -12,6 +13,5 @@ export default {
 
 <style lang="scss">
 @import "./common/base.scss";
-@import "./common/style.scss";
 </style>
 
