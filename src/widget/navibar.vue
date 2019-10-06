@@ -9,7 +9,7 @@
         <div class="app-navi__telnum green">
           <slot name="telNum"></slot>
         </div>
-        <img class="app-navi__menu" :src="menu1" alt />
+        <img class="app-navi__menu" @click.stop="$emit('menuclick')" :src="menu1" alt />
       </div>
     </div>
   </div>
@@ -51,6 +51,7 @@ export default {
     }
     .app-navi__menu {
       height: 0.45rem;
+      cursor: pointer;
     }
   }
 }

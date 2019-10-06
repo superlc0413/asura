@@ -1,7 +1,7 @@
 <template>
-  <div class="wrap">
+  <div @click="onGlobalClk" class="wrap">
     <!-- navibar -->
-    <app-navi>
+    <app-navi @menuclick="onMenuBtnClk">
       <template slot="telNum">{{telNum}}</template>
     </app-navi>
     <!-- banner -->
@@ -13,6 +13,8 @@
       <template slot="telNum">{{telNum}}</template>
       <template slot="addr">{{addr}}</template>
     </app-footer>
+    <!-- menu body -->
+    <app-menu ref="appMenu" :menuItems="menuItems"></app-menu>
   </div>
 </template>
 <script>
@@ -24,10 +26,23 @@ export default {
     return {
       // banner
       telNum,
-      addr
+      addr,
+      menuItems: [
+        { name: "页面1", path: "index" },
+        { name: "页面2", path: "csqnss" },
+        { name: "页面3", path: "news" },
+        { name: "页面4", path: "cooperation" }
+      ]
     };
   },
-  methods: {},
+  methods: {
+    onGlobalClk() {
+      this.$refs.appMenu.hide();
+    },
+    onMenuBtnClk() {
+      this.$refs.appMenu.show();
+    }
+  },
   computed: {},
   created() {},
   mounted() {}
