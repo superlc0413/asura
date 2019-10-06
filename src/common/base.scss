@@ -1,0 +1,49 @@
+* {
+  position: relative;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+.abs {
+  position: absolute;
+}
+
+.ibox {
+  font-size: 0;
+  white-space: nowrap;
+}
+.ibox > * {
+  font-size: 12px;
+  white-space: normal;
+  display: inline-block;
+  vertical-align: middle;
+}
+.ibox:after {
+  content: "";
+  width: 0;
+  height: 100%;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.ibox > .ibox {
+  font-size: 0;
+  white-space: nowrap;
+}
+.ibox > .right {
+  position: absolute;
+  height: 100%;
+  right: 0;
+  text-align: right;
+}
+
+.flex {
+  display: flex;
+}
+
+.green {
+  color: #77bc28;
+}
