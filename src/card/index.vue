@@ -190,7 +190,7 @@
           <div class="desc">8月1日由赛软(上海)科技有限公司发起的新产品“CS全脑双师”新闻发布会在上海虹桥世界中心成功举办，来自...</div>
         </li>
       </ul>
-      <div class="more" @click="goToNews">更多新闻 >></div>
+      <div class="more" @click="goToNews">更多新闻 &gt;&gt;</div>
     </x-section>
 
     <!-- results -->

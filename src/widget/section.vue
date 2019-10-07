@@ -2,7 +2,7 @@
   <section class="x-section">
     <div class="x-section__wrap">
       <div class="x-section__title">{{mainTitle}}</div>
-      <div class="x-section__subtitle">{{subTitle}}</div>
+      <div class="x-section__subtitle" v-if="subTitle">{{subTitle}}</div>
       <slot></slot>
     </div>
   </section>
