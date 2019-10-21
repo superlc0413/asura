@@ -37,7 +37,7 @@ export default {
   background: #fff;
   padding: 0 15px;
   .app-navi__wrap {
-    height: 1.35rem;
+    height: 1.2rem;
     .app-navi__logo {
       height: 0.6rem;
       margin-right: 0.08rem;

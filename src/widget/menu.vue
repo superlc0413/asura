@@ -9,7 +9,19 @@
 export default {
   data() {
     return {
-      visible: false
+      visible: false,
+      menuItems: [
+        { id: 1, type: "hash", name: "首页", path: "index" },
+        { id: 2, type: "hash", name: "CS全脑双师", path: "csqnss" },
+        { id: 3, type: "hash", name: "品牌资讯", path: "news" },
+        { id: 4, type: "hash", name: "合作服务", path: "cooperation" },
+        {
+          id: 5,
+          type: "href",
+          name: "登录",
+          path: "https://www.sairuankeji.com"
+        }
+      ]
     };
   },
   props: {
@@ -21,7 +33,14 @@ export default {
   methods: {
     goto(item) {
       this.visible = false;
-      location.hash = `#/${item.path}`;
+      switch (item.type) {
+        case "href":
+          location.href = item.path;
+          break;
+        case "hash":
+        default:
+          location.hash = `#/${item.path}`;
+      }
     },
     show() {
       this.visible = true;
@@ -38,26 +57,45 @@ export default {
 <style lang="scss">
 .app-menu {
   position: fixed;
-  right: 0.15rem;
-  top: 0.15rem;
-  transform: translateX(150%);
-  border: 1px solid #999;
-  border-radius: 2px;
-  transition: 0.2s ease-out;
+  right: 0.1rem;
+  top: 1.3rem;
+  transform: scaleY(0);
+  opacity: 0;
+  transform-origin: 0% 0%;
+  border: 1px solid #ccc;
+  border-radius: 0.1rem;
+  box-shadow: 0 0 4px #999;
+  transition: 0.15s ease-out;
+  overflow: hidden;
   &.visible {
-    transform: translateX(0);
+    transform: scaleY(1);
+    opacity: 1;
   }
   .app-menu__wrap {
-    padding: 0.05rem 0.1rem;
+    padding: 0.08rem 0.12rem;
     background: #fff;
     li {
       color: #333;
       border-bottom: 1px solid #999;
       font-size: 0.3rem;
       line-height: 2.7;
-      min-width: 1.8rem;
+      min-width: 2.6rem;
+      padding-left: 0.3rem;
       &:last-child {
-        border-bottom: none;
+        border-bottom: none !important;
+      }
+    }
+  }
+
+  &.dark {
+    border: none;
+    box-shadow: 0 0 3px #666;
+    .app-menu__wrap {
+      padding: 0;
+      background: #666;
+      li {
+        color: #fff;
+        border-bottom: 1px solid #777;
       }
     }
   }
