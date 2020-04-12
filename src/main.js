@@ -11,11 +11,6 @@ Vue.config.productionTip = false;
 Vue.use(MintUi);
 Vue.use(Widgets);
 
-window.$X = {
-  telNum: "18621337717",
-  addr: "上海市虹桥世界中心"
-};
-
 /* eslint-disable no-new */
 new Vue({
   el: "#app",

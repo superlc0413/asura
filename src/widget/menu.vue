@@ -1,7 +1,7 @@
 <template>
   <div class="app-menu" :class="{visible}">
     <ul class="app-menu__wrap">
-      <li v-for="item in menuItems" :key="item.id" @click="goto(item)">{{item.name}}</li>
+      <li v-for="item in menuItems" :key="item.id" @click.stop="goto(item)">{{item.name}}</li>
     </ul>
   </div>
 </template>
@@ -9,14 +9,14 @@
 export default {
   data() {
     return {
-      visible: false
+      visible: false,
+      menuItems: [
+        { id: "001", name: "首页", path: "index" },
+        { id: "002", name: "CS全脑双师", path: "csqnss" },
+        { id: "003", name: "品牌资讯", path: "news" },
+        { id: "004", name: "合作服务", path: "cooperation" }
+      ]
     };
-  },
-  props: {
-    menuItems: {
-      type: Array,
-      default: () => []
-    }
   },
   methods: {
     goto(item) {
